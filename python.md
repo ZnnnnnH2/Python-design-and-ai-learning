@@ -1,0 +1,40 @@
+- ### 数据类型
+
+  - 字典
+    - init
+      - dic = {}
+      - dic = dict()
+      - dic = dict([("a",2),("b",4)])
+      - dic = dict(a=2,b=4)
+    - find
+      - []
+      - get(key,non-return)
+      - in
+    - add
+      - []
+    - change
+      - []
+    - delete
+      - del dic[key]
+    - 遍历 
+      - keys(),values(),items()
+  - 元组
+    - 创建
+      - tu = (1,3,4,5)
+  - 列表 
+    - 创建
+      - ls = list()
+      - ls = []
+    - 索引
+    - 
+  - 集合
+    - 创建
+      - s = {}
+
+- ### 函数
+
+  - 传参
+    - *arg
+      - 可变长度的参数，作为元组传入
+    - **arg
+      - 打包成字典传入
