@@ -1,6 +1,3 @@
-from numpy.ma.core import true_divide
-
-
 def valid_string(string, dictionary):
 	d = list(dictionary)
 	sset = set()
@@ -24,8 +21,7 @@ def valid_string(string, dictionary):
 				if helper(i + cd[j]):
 					ok.add(i)
 					return True
-				else:
-					nook.add(i)
+		nook.add(i)
 		return False
 
 	return helper(i)
