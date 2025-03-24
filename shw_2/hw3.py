@@ -12,7 +12,7 @@ def get_words(file_list):
 	words = []
 	for file in file_list:
 		with open(file, 'r', encoding='utf-8') as f:
-			words += list(jieba.lcut(f.read()))
+			words += jieba.lcut(f.read())
 	return list(filter(lambda x: len(x) >1, words))
 
 def max_words(words):
@@ -23,8 +23,12 @@ def max_words(words):
 			word_count[word] += 1
 		else:
 			word_count[word] = 1
-		if word_count[wword] > word_count.get(word, 0):
+		if word_count[word] > word_count.get(wword, 0):
 			wword = word
+
+	ans = list(word_count.items())
+	ans.sort(key=lambda x: x[1], reverse=True)
+	print(ans[:10])
 
 	return wword
 

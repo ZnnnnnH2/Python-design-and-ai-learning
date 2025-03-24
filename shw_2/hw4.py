@@ -28,7 +28,7 @@ def get_all_files():
 def get_words(file):
 	words = []
 	with open(file, 'r', encoding='utf-8') as f:
-		words += list(jieba.cut(f.read(), HMM=False, cut_all=False))
+		words += jieba.lcut(f.read())
 	words = list(filter(lambda x: x in dic, words))
 	# print(words)
 	return words
