@@ -1,3 +1,3 @@
 
-s={1,2,3}
-print(2 in s)
+a = "A"
+print(a.lower())

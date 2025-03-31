@@ -136,53 +136,70 @@
 
   - 属性(Attribute): 类里面用于描述所有对象共同特征的变量或数据。比如学生的名字和分数。
   
-  - 方法(Method): 类里面的函数，用来区别类外面的函数, 用来实现某些功能。比如打印出学生的名字和分数。
+  - 方法(Method): 
+  
+    - 类里面的函数，用来区别类外面的函数, 用来实现某些功能。比如打印出学生的名字和分数。
+  
+      ```python
+      class A():
+          def print_all(self):
+              print(a)
+      
+      s = A()
+      print(type(s.print_all)) #<class method>
+      s.print_all() #True
+      print(type(A.print_all)) #<class function>
+      A.print_all(s) #True
+      ```
+  
+    - 
   
   - 类变量(class variables)与实例变量（instance variables）
     - 类变量是属于整个类的变量
-    
+  
     - 实例变量是动态分配的
-    
+  
       ```python
       class A():
           pass
       s = A()
       s.a = 3
       ```
-    
+  
       此时a是实例变量（实例属性）
-    
+  
   - 类方法(class method)
     - `@classmethod`
     - `cls` -> `self`
-    
+  
   - 类的私有属性和私有方法
     - 以`__`开头
       - 在`init`中定义，转义（自动替换）成`_类名__变量名`
-    
+  
   - 继承(Inheritance)
     - `class ChildClass(ParentClass)`
     - 手动调用父类的构造函数
     - 调用父类的方法时需要加上`self`参数变量，可以使用`super`简化
-    
+  
   - 静态变量和静态方法
     - 无须显式地声明静态变量
-    
+  
       ```python
       class A():
           a = 0
           def __init__(self):
               self.b = 1
       ```
-    
+  
       a为静态变量，为所有该类的实例共有
-    
+  
     - 使用`@staticmethod`声明静态函数
-    
+  
   - 修饰
     - `@property` 将函数伪装成属性
-    
+  
   - 方法
   
     - `isinstance(实例,类)`  判断实例是否是该类的实例
     - `dir(实例)` 查看所具有的属性和方法
+    - `self.__dict__` 是一个字典保存了实例所有的属性
