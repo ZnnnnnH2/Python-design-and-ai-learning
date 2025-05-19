@@ -1,3 +1,5 @@
-# ogEqTwuDM8UN0USC4x2JBRidE4po
-# ogEqTwkH38HY5JJ0J0PEyZ5pGGBg
-# ogEgTwuNVxFpS-T30sEqnzJeHR8g
+from cmath import log
+
+x = [1,2,3,3]
+y = list(map(lambda t:log(t), x))
+print(y)

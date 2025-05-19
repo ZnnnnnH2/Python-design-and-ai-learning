@@ -24,7 +24,7 @@ class LogisticsRegression(nn.Module):
         输出（返回值）：每一个数据样本的输出（预测）
         """
         x = torch.cat([x, torch.ones((x.shape[0], 1))], dim=1)
-        p = self.sigmoid(x.matmul(self.w))
+        p = self.sigmoid(x@self.w)
         return p
 
 
@@ -41,7 +41,7 @@ class Logistics_Model():
         输出：无返回变量
         """
         self.learning_rate = 0.01
-        self.epoches = 10000
+        self.epoches = 100
         self.model = LogisticsRegression(in_dim)
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate)
         self.loss_function = nn.BCELoss()  # 二分类交叉熵损失函数
